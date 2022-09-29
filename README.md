@@ -17,7 +17,7 @@ The main project files consist of the following, in order of execution:
 
 ### artstation_data_scraper.py
 
-A Python webscraper that uses the ***requests*** and ***json*** libraries to crawl over trending posts on artstation.com, parse their metadata to determine if they are valid to be labelled as either 2D or 3D, and download all of the images in the post. Will automaticaly set aside 25% of the downloaded posts as testing data, the rest is for training. ***This script is required to build the dataset to be used on the CNN. *** Files are saved by purpose and medium according to the following structure: 
+A Python webscraper that uses the ***requests*** and ***json*** libraries to crawl over trending posts on artstation.com, parse their metadata to determine if they are valid to be labelled as either 2D or 3D, and download all of the images in the post. Will automaticaly set aside 25% of the downloaded posts as testing data, the rest is for training. ***This script is required to build the dataset to be used on the CNN.*** Files are saved by purpose and medium according to the following structure: 
 
 ```bash
 ├───test
@@ -33,10 +33,10 @@ This script will not download posts that have conflicting mediums (e.g. 2D ***an
 Arguments can be provided using the following flags: 
 
 > -v	
->	for verbose output ; miscellaneous print statements detailing the downloading progress
+	For verbose output ; miscellaneous print statements detailing the downloading progress
 
 > -n [starting page] number_of_pages 	
->	the **starting page** option determines which page of results scraping will begin from
+	The **starting page** option determines which page of results scraping will begin from
 
 kmeans superpixel with average coloring.py:	iterates through all of the training and testing directory 2D and 3D images, resizes them to 800x800, and performs superpixel segmentation on them according to the SEEDS superpixel algorithm, as implemented in the opencv2 library. Superpixels are then colored with the average color of that superpixel. This is an image processing script meant to be used on a dataset of raw images (as seen in '/train' and '/test'). The results of the processing are saved into the 'resized photos' directory. 
 
