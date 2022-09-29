@@ -1,7 +1,7 @@
-#README                    |
-###This project was made for CS 235: Data Mining Techniques, Fall 2021 at the University of California, Riverside. 
+# README                    |
+### This project was made for CS 235: Data Mining Techniques, Fall 2021 at the University of California, Riverside. 
 
-##Project Description
+## Project Description
 This project is as an attempt to classify images downloaded from artstation.com with the labels of 2D or 3D. The original interest of this project was to know whether a machine could be trained to tell the difference between images that are made using 2D mediums (eg drawn in 2D art applications or analog means) and images made using 3D methods (eg 3D rendering software like Blender, 3DMAX, etc.). I also was interested in whether or not I could feed it hyperrealistic 2D images (eg very realistic paintings or sketches) and see if it classifies them as 3D. And vice versa.
 
 My original hypothesis was that the 3D renders would have much more realistic color gradients, like more realistic shading and lighting. Therefore, there would be much more color diversity and less matte or flat coloring, which might be more usual in 2D artwork. I've included a .pdf of the PowerPoint presentation I gave on the project for the class, for more details.
