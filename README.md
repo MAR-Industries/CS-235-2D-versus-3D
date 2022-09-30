@@ -33,9 +33,11 @@ This script will not download posts that have conflicting mediums (e.g. 2D ***an
 Arguments can be provided using the following flags: 
 
 > -v	
+
 	For verbose output ; miscellaneous print statements detailing the downloading progress
 
 > -n [starting page] number_of_pages 	
+
 	The **starting page** option determines which page of results scraping will begin from
 
 kmeans superpixel with average coloring.py:	iterates through all of the training and testing directory 2D and 3D images, resizes them to 800x800, and performs superpixel segmentation on them according to the SEEDS superpixel algorithm, as implemented in the opencv2 library. Superpixels are then colored with the average color of that superpixel. This is an image processing script meant to be used on a dataset of raw images (as seen in '/train' and '/test'). The results of the processing are saved into the 'resized photos' directory. 
