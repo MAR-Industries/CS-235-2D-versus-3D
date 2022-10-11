@@ -32,19 +32,19 @@ This script will not download posts that have conflicting mediums (e.g. 2D ***an
 
 Arguments can be provided using the following flags: 
 
--***v*** : 	
+-***v*** 
 
 
-	For verbose output ; miscellaneous print statements detailing the downloading progress
+For verbose output ; miscellaneous print statements detailing the downloading progress
 
 -***n*** [starting page] number_of_pages 	
 
 
-	The 'starting page' option determines which page of results scraping will begin from
+The 'starting page' option determines which page of results scraping will begin from
 	
 
 ### 2_kmeans_superpixel_with_average_coloring.py	
-Iterates through all of the training and testing images stored in the 'test' and 'train' directories, resizes them to 800x800, and performs superpixel segmentation on them according to the SLIC (Simple Linear Iterative Clustering) superpixel algorithm, as implemented in the opencv2 library. Superpixels are then colored with the average color of that superpixel. This is an image processing script meant to be used on a dataset of raw images (as seen in '/train' and '/test'). Execution of this script must occur in the same directory as where you're storing the '/train' and '/test' directories. Altered images are then saved to '/resized photos'. As implied by the title, the SLIC method relies on k-means clustering for superpixel segmentation. You may supply a custom number of clusters using the following argument: 
+Iterates through all of the training and testing images stored in the 'test' and 'train' directories, resizes them to 800x800, and performs superpixel segmentation on them according to the SLIC (Simple Linear Iterative Clustering) superpixel algorithm, as implemented in the **opencv2** library. Superpixels are then colored with the average color of that superpixel. This is an image processing script meant to be used on a dataset of raw images (as seen in '/train' and '/test'). Execution of this script must occur in the same directory as where you're storing the '/train' and '/test' directories. Altered images are then saved to '/resized photos'. As implied by the title, the SLIC method relies on k-means clustering for superpixel segmentation. You may supply a custom number of clusters using the following argument: 
 
 > -n number_of_clusters
 
