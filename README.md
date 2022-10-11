@@ -7,11 +7,8 @@
 This project attempts to train a convoluted neural network to differentiate between 2D artworks and 3D artworks. My original conclusion is that the human eye, for the most part, can differentiate between 2D artworks and 3D renders. A somewhat obvious example below:
 
 ![It might be considered cheating if you're familiar with these two works, but the point should still be obvious](/assets/comparison.png)
-This project is as an attempt to classify images downloaded from artstation.com with the labels of 2D or 3D. The original intent of this project was to explore whether a machine could be trained to tell the difference between images that are made using 2D mediums (eg drawn in 2D art applications or analog means) and images made using 3D methods (eg 3D rendering software like Blender, 3DMAX, etc.) o na consistent basis. I also was interested in whether or not I could feed it hyperrealistic 2D images (eg very realistic paintings or sketches) and see if it classifies them as 3D. And vice versa.
 
-My original hypothesis was that the 3D renders would have much more realistic color gradients, like more realistic shading and lighting. Therefore, there would be much more color diversity and less matte or flat coloring, which might be more usual in 2D artwork. 
-
-I've included a .pdf of the PowerPoint presentation I gave on the project for the class, for more details.
+My original hypothesis was that the 3D renders would have much more realistic color gradients, ie more realistic shading and lighting. Therefore there would be much more color variance in 3D renders compared to 2D images. This led me to integrate the **opencv** Python library to alter all of the images in the dataset using coloring by average color per superpixel. Further details can be found in the included .pdf of the PowerPoint presentation I gave for the class, as well as in the file descriptions below. 
 
 
 ## File Structure 
