@@ -1,6 +1,15 @@
-import requests, json, time, random, os
+import requests, json, time, random, os, sys
+
+#Initializations
+verbosity = False
+starting_page = 1
+num_pages = 100
 
 def artScrape(lowerPage, upperPage):
+
+	#Check the value of upperPage and ensure it doesn't go above 499
+	if upperPage > 499:
+		upperPage = 499
 
 	#Checks whether the necessary folders exist for downloading
 	if not os.path.exists("train/"):
@@ -58,7 +67,7 @@ def artScrape(lowerPage, upperPage):
 							elif medium['name'] == "Digital 3D":
 								counter = counter + 1	
 						
-						if counter 	>= 2: 
+						if counter 	>= 2 and verbosity: 
 							print("Conflicting mediums, can't download!!! @ ", json_url)
 							continue
 					else: ## ensure it's 2D or 3D; for now, if neither of these, don't download	
@@ -102,16 +111,41 @@ def artScrape(lowerPage, upperPage):
 				
 				posts_parsed += 1	##just a tracker for how many posts have made it to the downloading stage
 
-				if posts_parsed % 50 == 0: ## some more prints for statistics
+				if verbosity and posts_parsed % 50 == 0: ## some more prints for statistics
 					print("\nNull mediums: " + str(null_mediums))
 					print("\nTotal posts parsed: " + str(posts_parsed) + "\n")
 				
 				time.sleep(randomVar * .0625) ## trying to avoid getting blocked as a bot
 
-				
-##below is where we call the scraping method for however many webpages of results we would like to specify	
-## first parameter is the lowest page to scrape, second is the upper page to scrape LAST		
-## this was mainly to streamline testing during development
 
-#this was originally (118,150)
-artScrape(118,120)
+
+for i in range(len(sys.argv)):
+	if sys.argv[i] == "-v": #verbose flag
+		verbosity = True
+		print("read verbosity argument")
+	elif sys.argv[i] == "-n": #custom results size and starting page
+		try: 
+			if sys.argv[i+1].isdigit() and int(sys.argv[i+1]) > 0:
+				if int(sys.argv[i+1]) >= 500:
+					print("Neither argument for the '-n' flag should be >= 500")
+					sys.exit()					
+				num_pages = int(sys.argv[i+1])
+				try:
+					if sys.argv[i+2].isdigit() and int(sys.argv[i+2]) > 0:
+						if int(sys.argv[i+2]) >= 500:
+							print("Neither argument for the '-n' flag should be >= 500")
+							sys.exit()	
+						num_pages = int(sys.argv[i+2])
+						starting_page = int(sys.argv[i+1])
+				except IndexError:
+					continue
+		except IndexError:
+			print("No valid argument given after the '-n' flag")
+			sys.exit()
+	
+
+# Below is where we call the scraping method for however many webpages of results we would like to specify	
+# First parameter is the lowest page to scrape, second is the upper page to scrape LAST		
+# This was originally (118,150) during testing
+
+artScrape(starting_page,starting_page+num_pages)
