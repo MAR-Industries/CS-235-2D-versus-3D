@@ -34,13 +34,11 @@ Arguments can be provided using the following flags:
 
 -***v*** 
 
-
-For verbose output ; miscellaneous print statements detailing the downloading progress
+	For verbose output ; miscellaneous print statements detailing the downloading progress
 
 -***n*** [starting page] number_of_pages 	
 
-
-The 'starting page' option determines which page of results scraping will begin from
+	The 'starting page' option determines which page of results scraping will begin from
 	
 
 ### 2_kmeans_superpixel_with_average_coloring.py	
