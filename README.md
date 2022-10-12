@@ -10,7 +10,7 @@ This project attempts to train a convoluted neural network to differentiate betw
 
 My original hypothesis was that the 3D renders would have much more realistic color gradients, ie more realistic shading and lighting. Therefore there would be much more color variance in 3D renders compared to 2D images. This led me to integrate the **opencv** Python library to alter all of the images in the dataset using coloring by average color per superpixel. Further details can be found in the included .pdf of the PowerPoint presentation I gave for the class, as well as in the file descriptions below. 
 
-The images for the original research were scraped from artstation.com, a mostly professional website for posting artworks of various different mediums. This is achieved with the webscraper written in **1_artstation_data_scraper.py**. I've included a sample set of some images scraped from artstation.com on ***October 11th, 2022***, stored in the '/test' and '/train' directories. ***I do not own these images and am not responsible for any way you use them outside of the scope of this project.*** I've also included some samples of those same images after altering them with average coloring by superpixel segmentation using **2_kmeans_superpixel_with_average_coloring.py**. You can use these for demoing the k-means average coloring script and for demoing the machine training and testing. They are stored in '/resized photos'.
+The images for the original research were scraped from artstation.com, a mostly professional website for posting artworks of various different mediums. This is achieved with the webscraper written in **1_artstation_data_scraper.py**. You can use that script for creating a dataset sourced from there. More below.
 
 ## File Structure 
 
