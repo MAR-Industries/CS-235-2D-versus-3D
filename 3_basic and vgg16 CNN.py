@@ -72,14 +72,14 @@ print("post test")
 # plot loss
 plt.subplot(211)
 plt.title('Loss')
-plt.plot(hist_track.hist_track['loss'], color='blue', label='train')
-plt.plot(hist_track.hist_track['val_loss'], color='orange', label='test')
+plt.plot(hist_track.history['loss'], color='blue', label='train')
+plt.plot(hist_track.history['val_loss'], color='orange', label='test')
 
 # plot accuracy
 plt.subplot(212)
 plt.title('Classification Accuracy')
-plt.plot(hist_track.hist_track['accuracy'], color='blue', label='train')
-plt.plot(hist_track.hist_track['val_accuracy'], color='orange', label='test')
+plt.plot(hist_track.history['accuracy'], color='blue', label='train')
+plt.plot(hist_track.history['val_accuracy'], color='orange', label='test')
 ##filename = input('Name the file: ')
 ##plt.savefig(filename + '.png')
 plt.show()

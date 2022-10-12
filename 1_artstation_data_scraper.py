@@ -3,7 +3,7 @@ import requests, json, time, random, os, sys
 #Initializations
 verbosity = False
 starting_page = 1
-num_pages = 100
+num_pages = 25
 
 def artScrape(lowerPage, upperPage):
 

@@ -1,7 +1,7 @@
 ##hopefully this works for k-means clustering for colors, in order to automate cluster counts
 import cv2
 import numpy as np
-import os
+import os, sys
 from sklearn.cluster import KMeans
 from skimage.segmentation import slic
 ##from skimage.segementation import felzenszwalb
@@ -9,8 +9,22 @@ from skimage.segmentation import mark_boundaries ##used for the segmentation mas
 import matplotlib.pyplot as plt
 from PIL import Image
 
+#initializations
 my_dpi = 96
 currentDirectory = ''
+segment_count = 2500 #default value
+
+for i in range(len(sys.argv)):
+	if sys.argv[i] == "-n":
+		try: 
+			if sys.argv[i+1].isdigit():
+				segment_count = sys.argv[i+1]
+			else:
+				print("ERROR: argument supplied for number of segments must be a positive integer")
+				sys.exit()	
+		except IndexError:
+			print("ERROR: no valid argument found for the number of desired segments")
+			sys.exit()
 
 if not os.path.exists('resized photos/'):
 	os.makedirs('resized photos/train/Digital 2D')
@@ -50,7 +64,7 @@ for i in range(4):
 		
 		#average coloring in superpixels actually begins here 
 		img = cv2.cvtColor(loaded_image, cv2.COLOR_BGR2HSV) ##convert to appropriate color space 
-		label=slic(img,compactness=10, n_segments=2500)
+		label=slic(img,compactness=10, n_segments=segment_count)
 		
 		#main work to create color average for superpixels 
 		img_reshaped=img.reshape((img.shape[0]*img.shape[1],img.shape[2]))
